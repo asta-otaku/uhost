@@ -4,19 +4,9 @@ import "./Homepage.css";
 import { Link } from "react-router-dom";
 
 function Homepage() {
-  var backdrop = document.querySelector(".backdrop");
-  var modal = document.querySelector(".modal");
-  var modalNoButton = document.querySelector(".modal__action--negative");
-  var selectPlanButtons = document.querySelectorAll(".plan button");
-  var toggleButton = document.querySelector(".toggle-button");
-  var mobileNav = document.querySelector(".mobile-nav");
 
   const handlePlans = () => {
-    modal.classList.add("open")
-    backdrop.style.display = "block";
-    setTimeout(function() {
-      backdrop.classList.add("open");
-    }, 10)
+    
   }
   return (
     <>
