@@ -6,11 +6,27 @@ import { Link } from "react-router-dom";
 function Homepage() {
 
   const handlePlans = () => {
-    
+
   }
   return (
     <>
       <main>
+        {/* Newly added */}
+      <div className="backdrop"></div>
+      <div className="modal">
+        <h1 className="modal__title">Do you want to continue?</h1>
+        <div className="modal__actions">
+          <a href="start-hosting/index.html" className="modal__action">
+            Yes!
+          </a>
+          <button
+            className="modal__action modal__action--negative"
+            type="button"
+          >
+            No!
+          </button>
+        </div>
+      </div>
         <section id="product-overview">
           <h1>Get the freedom you deserve.</h1>
         </section>
