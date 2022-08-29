@@ -13,13 +13,17 @@ function Homepage() {
       setBackdrop(true);
     }, 10);
   }
+  const removeModal = () => {
+    setModalClass(false)
+    setBackdrop(false)
+  }
   return (
     <>
       <main>
         {/* Newly added */}
       {
         modalClass 
-        ? <div style={{display: 'block'}} className={backdrop ? "backdrop open" :"backdrop"}></div>
+        ? <div onClick={removeModal} className={backdrop ? "backdrop open" :"backdrop"}></div>
         : <div className={backdrop ? "backdrop open" :"backdrop"}></div>
       }
       <div className={modalClass ? "modal open" : "modal"}>
