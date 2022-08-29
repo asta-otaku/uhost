@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
 
 function Homepage() {
 
+  const [modalClass, setModalClass] = useState(false);
+  const [backdrop, setBackdrop] = useState(false);
   const handlePlans = () => {
-
+    modalClass === false && setModalClass(true);
+    setTimeout(() => {
+      setBackdrop(true);
+    }, 10);
   }
   return (
     <>
       <main>
         {/* Newly added */}
-      <div className="backdrop"></div>
-      <div className="modal">
+      {
+        modalClass 
+        ? <div style={{display: 'block'}} className={backdrop ? "backdrop open" :"backdrop"}></div>
+        : <div className={backdrop ? "backdrop open" :"backdrop"}></div>
+      }
+      <div className={modalClass ? "modal open" : "modal"}>
         <h1 className="modal__title">Do you want to continue?</h1>
         <div className="modal__actions">
           <a href="start-hosting/index.html" className="modal__action">
