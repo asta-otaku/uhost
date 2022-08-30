@@ -185,7 +185,7 @@ main {
   z-index: 101;
   top: 0;
   left: 0;
-  background: white;
+  background: #ffff;
   width: 80%;
   height: 100vh;
 }
@@ -208,6 +208,18 @@ main {
 
 .mobile-nav__item a {
   font-size: 1.5rem;
+}
+
+.mobile-nav__item a {
+  color: #0e4f1f;
+}
+
+.mobile-nav__item a:hover {
+  color: #2ddf5c;
+}
+
+.mobile-nav__item--cta a {
+  color: #ffff;
 }
 
 .button {

@@ -4,42 +4,39 @@ import "./Homepage.css";
 import { Link } from "react-router-dom";
 
 function Homepage() {
-
   const [modalClass, setModalClass] = useState(false);
-  const [backdrop, setBackdrop] = useState(false);
+  const [, setBackdrop] = useState(false);
   const handlePlans = () => {
     modalClass === false && setModalClass(true);
     setTimeout(() => {
       setBackdrop(true);
     }, 10);
-  }
+  };
   const removeModal = () => {
-    setModalClass(false)
-    setBackdrop(false)
-  }
+    setModalClass(false);
+    setBackdrop(false);
+  };
   return (
     <>
       <main>
-        {/* Newly added */}
-      {
-        modalClass 
-        ? <div onClick={removeModal} className={backdrop ? "backdrop open" :"backdrop"}></div>
-        : <div className={backdrop ? "backdrop open" :"backdrop"}></div>
-      }
-      <div className={modalClass ? "modal open" : "modal"}>
-        <h1 className="modal__title">Do you want to continue?</h1>
-        <div className="modal__actions">
-          <a href="start-hosting/index.html" className="modal__action">
-            Yes!
-          </a>
-          <button
-            className="modal__action modal__action--negative"
-            type="button"
-          >
-            No!
-          </button>
+        {modalClass ? (
+          <div onClick={removeModal} className={"backdrop open"}></div>
+        ) : null}
+        <div className={modalClass ? "modal open" : "modal"}>
+          <h1 className="modal__title">Do you want to continue?</h1>
+          <div className="modal__actions">
+            <Link to="/start-hosting" className="modal__action">
+              Yes!
+            </Link>
+            <button
+              className="modal__action modal__action--negative"
+              type="button"
+              onClick={removeModal}
+            >
+              No!
+            </button>
+          </div>
         </div>
-      </div>
         <section id="product-overview">
           <h1>Get the freedom you deserve.</h1>
         </section>
@@ -57,7 +54,9 @@ function Homepage() {
                 <li className="plan__feature">Basic Support</li>
               </ul>
               <div>
-                <button onClick={handlePlans} className="button">CHOOSE PLAN</button>
+                <button onClick={handlePlans} className="button">
+                  CHOOSE PLAN
+                </button>
               </div>
             </article>
             <article className="plan plan--highlighted">
@@ -72,7 +71,9 @@ function Homepage() {
                 <li className="plan__feature">Plus Support</li>
               </ul>
               <div>
-                <button onClick={handlePlans} className="button">CHOOSE PLAN</button>
+                <button onClick={handlePlans} className="button">
+                  CHOOSE PLAN
+                </button>
               </div>
             </article>
             <article className="plan">
@@ -86,7 +87,9 @@ function Homepage() {
                 <li className="plan__feature">Priority Support</li>
               </ul>
               <div>
-                <button onClick={handlePlans} className="button">CHOOSE PLAN</button>
+                <button onClick={handlePlans} className="button">
+                  CHOOSE PLAN
+                </button>
               </div>
             </article>
           </div>
