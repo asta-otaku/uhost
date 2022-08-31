@@ -14,28 +14,31 @@ function Header() {
     }, 10);
   };
   const removeBackdrop = () => {
-    setNavClass(false)
+    setNavClass(false);
     setBackdrop(false);
   };
 
   return (
     <>
       {navClass ? (
-        <div
-          onClick={removeBackdrop}
-          className="backdrop open"
-        ></div>
+        <div onClick={removeBackdrop} className="backdrop open"></div>
       ) : null}
       <nav className={navClass ? "mobile-nav open" : "mobile-nav"}>
         <ul className="mobile-nav__items">
           <li className="mobile-nav__item">
-            <Link to="/packages">Packages</Link>
+            <Link to="/packages" onClick={removeBackdrop}>
+              Packages
+            </Link>
           </li>
           <li className="mobile-nav__item">
-            <Link to="/customers">Customers</Link>
+            <Link to="/customers" onClick={removeBackdrop}>
+              Customers
+            </Link>
           </li>
           <li className="mobile-nav__item mobile-nav__item--cta">
-            <Link to="/start-hosting">Start Hosting</Link>
+            <Link to="/start-hosting" onClick={removeBackdrop}>
+              Start Hosting
+            </Link>
           </li>
         </ul>
       </nav>
