@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom'
 import Homepage from './components/Homepage/Homepage';
 import Customers from './components/Customer Component/Customers';
 import Packages from './components/Packages Component/Packages';
+import Hosting from './components/Hosting Component/Hosting';
+import InvalidPage from './InvalidPage';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/packages' element={<Packages />} />
         <Route path='/customers' element={<Customers />} />
+        <Route path='/start-hosting' element={<Hosting />} />
+        <Route path='*' element={<InvalidPage/>} />
       </Routes>
     </div>
   );
