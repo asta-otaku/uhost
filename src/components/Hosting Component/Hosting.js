@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Hosting.css";
 import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { motion } from "framer-motion";
 import TextError from "../../utils/TextError";
 
 function Hosting() {
@@ -34,7 +35,12 @@ function Hosting() {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <main className="signup-page">
         <h1 className="signup-title">Awesome! Let's dive right in!</h1>
         <Formik
@@ -106,7 +112,7 @@ function Hosting() {
         </Formik>
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 

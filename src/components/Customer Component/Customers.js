@@ -3,12 +3,18 @@ import "../../App.css";
 import "./Customers.css";
 import customer1 from "../images/customer-1.jpg";
 import customer2 from "../images/customer-2.jpg";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Footer from "../Footer Component/Footer";
 
 function Customers() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="backdrop" />
       <main>
         <div>
@@ -53,7 +59,7 @@ function Customers() {
         </div>
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 

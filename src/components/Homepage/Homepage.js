@@ -3,6 +3,7 @@ import "../../App.css";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
 import Footer from "../Footer Component/Footer";
+import { motion } from "framer-motion";
 
 function Homepage() {
   const [modalClass, setModalClass] = useState(false);
@@ -18,7 +19,12 @@ function Homepage() {
     setBackdrop(false);
   };
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <main>
         {modalClass ? (
           <div onClick={removeModal} className={"backdrop open"}></div>
@@ -496,7 +502,7 @@ function Homepage() {
         </section>
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 

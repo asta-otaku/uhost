@@ -1,12 +1,18 @@
 import React from "react";
 import "../../App.css";
 import "./Packages.css";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Footer from "../Footer Component/Footer";
 
 function Packages() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="background" />
       <main>
         <section className="package" id="plus">
@@ -47,7 +53,7 @@ function Packages() {
         </section>
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 
