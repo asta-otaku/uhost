@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Footer Component/Footer";
 import { Link } from "react-router-dom";
+import "../../App.css";
 import "./Hosting.css";
 import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage } from "formik";

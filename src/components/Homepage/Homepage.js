@@ -25,7 +25,7 @@ function Homepage() {
       exit={{ opacity: 0, x: -100 }}
       transition={{ duration: 0.5 }}
     >
-      <main>
+      <div>
         {modalClass ? (
           <div onClick={removeModal} className={"backdrop open"}></div>
         ) : null}
@@ -500,7 +500,7 @@ function Homepage() {
             </li>
           </ul>
         </section>
-      </main>
+      </div>
       <Footer />
     </motion.div>
   );

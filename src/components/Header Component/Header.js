@@ -3,6 +3,7 @@ import companyLogo from "../images/uhost-icon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../../App.css";
+import "./Header.css";
 
 function Header() {
   const [, setBackdrop] = useState(false);
@@ -64,7 +65,7 @@ function Header() {
             <li className="main-nav__item">
               <Link to="/customers">Customers</Link>
             </li>
-            <li className="main-nav__item mobile-nav__item--cta">
+            <li className="main-nav__item main-nav__item--cta">
               <Link to="/start-hosting">Start Hosting</Link>
             </li>
           </ul>
