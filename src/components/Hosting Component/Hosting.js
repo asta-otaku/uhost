@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "../Footer Component/Footer";
 import { Link } from "react-router-dom";
+import "../../App.css";
 import "./Hosting.css";
 import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import TextError from "../utils/TextError";
 
 function Hosting() {
   const initialValues = {
@@ -56,27 +58,27 @@ function Hosting() {
                     Ms.
                   </option>
                 </Field>
-                <ErrorMessage name="selectOption" />
+                <ErrorMessage name="selectOption" component={TextError} />
               </div>
               <div className="form-control">
                 <label htmlFor="firstName">First Name</label>
                 <Field name="firstName" id="firstName" type="text" />
-                <ErrorMessage name="firstName" />
+                <ErrorMessage name="firstName" component={TextError} />
               </div>
               <div className="form-control">
                 <label htmlFor="lastName">Last Name</label>
                 <Field name="lastName" id="lastName" type="text" />
-                <ErrorMessage name="lastName" />
+                <ErrorMessage name="lastName" component={TextError} />
               </div>
               <div className="form-control">
                 <label htmlFor="email">Email</label>
                 <Field name="email" id="email" type="email" />
-                <ErrorMessage name="email" />
+                <ErrorMessage name="email" component={TextError} />
               </div>
               <div className="form-control">
                 <label htmlFor="password">Password</label>
                 <Field name="password" id="password" type="password" />
-                <ErrorMessage name="password" />
+                <ErrorMessage name="password" component={TextError} />
               </div>
               <div className="form-control">
                 <label htmlFor="confirmPassword">confirmPassword</label>
@@ -85,7 +87,7 @@ function Hosting() {
                   id="confirmPassword"
                   type="password"
                 />
-                <ErrorMessage name="confirmPassword" />
+                <ErrorMessage name="confirmPassword" component={TextError} />
               </div>
               <div className="form-control">
                 <div class="signup-form__checkbox">
@@ -94,7 +96,7 @@ function Hosting() {
                     Agree to
                     <Link to="#">Terms &amp; Conditions</Link>
                   </label>
-                  <ErrorMessage name="checked" />
+                  <ErrorMessage name="checked" component={TextError} />
                 </div>
               </div>
               <button type="submit">Sign Up</button>

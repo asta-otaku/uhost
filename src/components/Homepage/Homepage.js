@@ -19,7 +19,7 @@ function Homepage() {
   };
   return (
     <>
-      <main>
+      <div>
         {modalClass ? (
           <div onClick={removeModal} className={"backdrop open"}></div>
         ) : null}
@@ -494,7 +494,7 @@ function Homepage() {
             </li>
           </ul>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

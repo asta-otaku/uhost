@@ -3,6 +3,7 @@ import companyLogo from "../images/uhost-icon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../../App.css";
+import "./Header.css";
 
 function Header() {
   const [, setBackdrop] = useState(false);
@@ -14,27 +15,27 @@ function Header() {
     }, 10);
   };
   const removeBackdrop = () => {
-    setNavClass(false)
+    setNavClass(false);
     setBackdrop(false);
   };
 
   return (
     <>
       {navClass ? (
-        <div
-          onClick={removeBackdrop}
-          className="backdrop open"
-        ></div>
+        <div onClick={removeBackdrop} className="backdrop open"></div>
       ) : null}
       <nav className={navClass ? "mobile-nav open" : "mobile-nav"}>
         <ul className="mobile-nav__items">
-          <li className="mobile-nav__item">
+          <li onClick={removeBackdrop} className="mobile-nav__item">
             <Link to="/packages">Packages</Link>
           </li>
-          <li className="mobile-nav__item">
+          <li onClick={removeBackdrop} className="mobile-nav__item">
             <Link to="/customers">Customers</Link>
           </li>
-          <li className="mobile-nav__item mobile-nav__item--cta">
+          <li
+            onClick={removeBackdrop}
+            className="mobile-nav__item mobile-nav__item--cta"
+          >
             <Link to="/start-hosting">Start Hosting</Link>
           </li>
         </ul>
@@ -61,7 +62,7 @@ function Header() {
             <li className="main-nav__item">
               <Link to="/customers">Customers</Link>
             </li>
-            <li className="main-nav__item mobile-nav__item--cta">
+            <li className="main-nav__item main-nav__item--cta">
               <Link to="/start-hosting">Start Hosting</Link>
             </li>
           </ul>
