@@ -117,7 +117,7 @@
     top: 0;
     left: 0;
     background: #ffff;
-    width: 50%;
+    width: 80%;
     height: 100vh;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .mobile-nav__item a {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .mobile-nav__item a {
