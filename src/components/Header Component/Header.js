@@ -22,7 +22,7 @@ function Header() {
   return (
     <>
       {navClass ? (
-        <div onClick={removeBackdrop} className="backdrop open"></div>
+        <div onClick={removeBackdrop} className="backdrop open" />
       ) : null}
       <nav className={navClass ? "mobile-nav open" : "mobile-nav"}>
         <ul className="mobile-nav__items">
