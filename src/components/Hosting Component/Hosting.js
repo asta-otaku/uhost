@@ -105,7 +105,10 @@ function Hosting() {
                   <ErrorMessage name="checked" component={TextError} />
                 </div>
               </div>
-              <button type="submit" disabled={!formik.isValid}>
+              <button
+                type="submit"
+                disabled={!formik.isValid || !formik.values.checked}
+              >
                 Sign Up
               </button>
             </Form>
